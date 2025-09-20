@@ -115,7 +115,7 @@ function Login() {
         <div className="mt-2 text-center">
           <a
             href="#"
-            className="no-underline text-[rgb(36,141,36)] hover:underline"
+            className="no-underline text-[rgb(36,141,36)] hover:underline "
           >
             Forgot Password?
           </a>
