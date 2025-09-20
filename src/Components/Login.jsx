@@ -105,7 +105,7 @@ function Login() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full mt-5 py-2 bg-[rgb(45,201,45)] text-white rounded-md font-semibold"
+            className="w-full mt-5 py-2 bg-[rgb(45,201,45)]  text-white rounded-md font-semibold"
           >
             Login
           </button>
