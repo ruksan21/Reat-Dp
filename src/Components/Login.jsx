@@ -122,7 +122,7 @@ function Login() {
         </div>
 
         {/* Footer */}
-        <div className="mt-2 text-center text-gray-500 text-base">
+        <div className="mt-2 text-center text-gray-500 text-base ">
           <p>
             <i className="fa-regular fa-copyright"></i>
             2025 CLMS System. Staff access only
