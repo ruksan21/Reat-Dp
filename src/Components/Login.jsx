@@ -18,7 +18,7 @@ function Login() {
     setIsSubmitting(true);
     if (Object.keys(errs).length === 0) {
       console.log("Login successful", formValues);
-      // ✅ Here you can add your login API call
+      
     }
   };
 
@@ -37,7 +37,7 @@ function Login() {
   return (
     <div className="flex justify-center items-center min-h-screen font-sans">
       <div className="p-8 rounded-[10px] shadow-lg bg-white  max-w-md">
-        {/* Header */}
+        
         <div className="text-center mb-5">
           <h1 className="text-[rgb(45,201,45)] font-bold text-2xl">
             CLMS Staff Login
@@ -45,16 +45,15 @@ function Login() {
           <p>Staff access only. Please login to continue</p>
         </div>
 
-        {/* ✅ Show formValues JSON if no errors and submitted */}
+        
         {isSubmitting && Object.keys(formErrors).length === 0 && (
           <pre className="max-w-full max-h-24 overflow-auto text-sm break-words mb-4">
             {JSON.stringify(formValues, null, 2)}
           </pre>
         )}
 
-        {/* Form */}
         <form onSubmit={handleSubmit} noValidate>
-          {/* Email */}
+          
           <div className="mb-4">
             <label htmlFor="usernameorEmail">Email</label>
             <div className="relative w-full">
@@ -77,7 +76,7 @@ function Login() {
             )}
           </div>
 
-          {/* Password */}
+         
           <div className="mb-4">
             <label htmlFor="password">Password</label>
             <div className="relative w-full">
@@ -102,7 +101,7 @@ function Login() {
             )}
           </div>
 
-          {/* Submit Button */}
+        
           <button
             type="submit"
             className="w-full mt-5 py-2 bg-[rgb(45,201,45)]  text-white rounded-md font-semibold"
@@ -111,7 +110,7 @@ function Login() {
           </button>
         </form>
 
-        {/* Links */}
+       
         <div className="mt-2 text-center">
           <a
             href="#"
@@ -121,7 +120,7 @@ function Login() {
           </a>
         </div>
 
-        {/* Footer */}
+        
         <div className="mt-2 text-center text-gray-500 text-base ">
           <p>
             <i className="fa-regular fa-copyright"></i>
