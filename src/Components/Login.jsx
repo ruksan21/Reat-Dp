@@ -5,6 +5,7 @@ function Login() {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false); // notification state
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,8 +18,9 @@ function Login() {
     setFormErrors(errs);
     setIsSubmitting(true);
     if (Object.keys(errs).length === 0) {
+      setShowSuccess(true);
+      setTimeout(() => setShowSuccess(false), 2000); // hide after 2 seconds
       console.log("Login successful", formValues);
-      
     }
   };
 
@@ -36,24 +38,20 @@ function Login() {
 
   return (
     <div className="flex justify-center items-center min-h-screen font-sans">
-      <div className="p-8 rounded-[10px] shadow-lg bg-white  max-w-md">
-        
+      {/* Success notification */}
+      {showSuccess && (
+        <div className="fixed top-6 right-6 bg-green-500 text-white px-6 py-3 rounded shadow-lg z-50">
+          Login successful!
+        </div>
+      )}
+      <div className="p-8 rounded-[10px] shadow-lg bg-white max-w-md">
         <div className="text-center mb-5">
           <h1 className="text-[rgb(45,201,45)] font-bold text-2xl">
             CLMS Staff Login
           </h1>
           <p>Staff access only. Please login to continue</p>
         </div>
-
-        
-        {isSubmitting && Object.keys(formErrors).length === 0 && (
-          <pre className="max-w-full max-h-24 overflow-auto text-sm break-words mb-4">
-            {JSON.stringify(formValues, null, 2)}
-          </pre>
-        )}
-
         <form onSubmit={handleSubmit} noValidate>
-          
           <div className="mb-4">
             <label htmlFor="usernameorEmail">Email</label>
             <div className="relative w-full">
@@ -75,8 +73,6 @@ function Login() {
               <p className="text-red-500 text-sm mt-1">{formErrors.Email}</p>
             )}
           </div>
-
-         
           <div className="mb-4">
             <label htmlFor="password">Password</label>
             <div className="relative w-full">
@@ -100,17 +96,13 @@ function Login() {
               <p className="text-red-500 text-sm mt-1">{formErrors.password}</p>
             )}
           </div>
-
-        
           <button
             type="submit"
-            className="w-full mt-5 py-2 bg-[rgb(45,201,45)]  text-white rounded-md font-semibold"
+            className="w-full mt-5 py-2 bg-[rgb(45,201,45)] text-white rounded-md font-semibold"
           >
             Login
           </button>
         </form>
-
-       
         <div className="mt-2 text-center">
           <a
             href="#"
@@ -119,8 +111,6 @@ function Login() {
             Forgot Password?
           </a>
         </div>
-
-        
         <div className="mt-2 text-center text-gray-500 text-base ">
           <p>
             <i className="fa-regular fa-copyright"></i>
@@ -131,6 +121,5 @@ function Login() {
     </div>
   );
 }
-
 
 export default Login;
