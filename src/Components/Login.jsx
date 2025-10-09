@@ -5,7 +5,7 @@ function Login() {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false); // notification state
+  const [showSuccess, setShowSuccess] = useState(false); 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
