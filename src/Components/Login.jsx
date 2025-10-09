@@ -19,7 +19,7 @@ function Login() {
     setIsSubmitting(true);
     if (Object.keys(errs).length === 0) {
       setShowSuccess(true);
-      setTimeout(() => setShowSuccess(false), 2000); // hide after 2 seconds
+      setTimeout(() => setShowSuccess(false), 2000); 
       console.log("Login successful", formValues);
     }
   };
