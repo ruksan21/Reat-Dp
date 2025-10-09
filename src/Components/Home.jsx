@@ -5,6 +5,7 @@ const stats = [
   { title: "Active Projects", value: 18, meta: "+3 new this week" },
   { title: "Pending Follow-ups", value: 12, meta: "Needs attention" },
   { title: "Completed Today", value: 34, meta: "On track" },
+  
 ];
 
 const activities = [
