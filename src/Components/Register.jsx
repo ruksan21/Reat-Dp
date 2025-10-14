@@ -60,7 +60,7 @@ export default function Register() {
         <p className="text-center text-gray-500 mb-6">Please register to continue</p>
 
         {showSuccess && (
-          <div className="text-green-600 font-semibold text-center mb-4">
+          <div className="fixed top-4 right-4 bg-green-600 text-white font-semibold px-4 py-2 rounded-md shadow-md">
             Registration successful!
           </div>
         )}
@@ -190,12 +190,16 @@ export default function Register() {
             <div>
               <label className="block text-sm font-medium mb-1">Ward Number</label>
               <input
-                type="text"
+                type="number"
                 name="ward"
                 value={formValues.ward}
                 onChange={handleChange}
                 placeholder="Enter your ward number"
                 className="w-full border border-gray-300 rounded-md p-2 focus:ring-2 focus:ring-green-500 outline-none"
+                style={{
+                  appearance: "none", // Hides spinner controls in most browsers
+                  MozAppearance: "textfield", // Firefox-specific
+                }}
               />
               <p className="text-red-500 text-sm">{formErrors.ward}</p>
             </div>
